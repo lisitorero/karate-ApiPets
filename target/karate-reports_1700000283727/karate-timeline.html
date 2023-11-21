@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.1:18]","start":1699999975592,"end":1699999976835,"title":"src\/test\/java\/examples\/features\/Petstore[1.1:18] 17:12:55.592-17:12:56.835 Creación de pet masivamente"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.2:18]","start":1699999976841,"end":1699999977141,"title":"src\/test\/java\/examples\/features\/Petstore[1.2:18] 17:12:56.841-17:12:57.141 Creación de pet masivamente"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.3:18]","start":1699999977147,"end":1699999977440,"title":"src\/test\/java\/examples\/features\/Petstore[1.3:18] 17:12:57.147-17:12:57.440 Creación de pet masivamente"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.4:18]","start":1699999977445,"end":1699999977741,"title":"src\/test\/java\/examples\/features\/Petstore[1.4:18] 17:12:57.445-17:12:57.741 Creación de pet masivamente"},{"id":5,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.5:18]","start":1699999977747,"end":1699999978040,"title":"src\/test\/java\/examples\/features\/Petstore[1.5:18] 17:12:57.747-17:12:58.040 Creación de pet masivamente"},{"id":6,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.6:18]","start":1699999978046,"end":1699999978343,"title":"src\/test\/java\/examples\/features\/Petstore[1.6:18] 17:12:58.046-17:12:58.343 Creación de pet masivamente"},{"id":7,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.7:18]","start":1699999978348,"end":1699999978640,"title":"src\/test\/java\/examples\/features\/Petstore[1.7:18] 17:12:58.348-17:12:58.640 Creación de pet masivamente"},{"id":8,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.8:18]","start":1699999978644,"end":1699999978939,"title":"src\/test\/java\/examples\/features\/Petstore[1.8:18] 17:12:58.644-17:12:58.939 Creación de pet masivamente"},{"id":9,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.9:18]","start":1699999978948,"end":1699999979244,"title":"src\/test\/java\/examples\/features\/Petstore[1.9:18] 17:12:58.948-17:12:59.244 Creación de pet masivamente"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

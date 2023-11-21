@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/bdd\/auth\/users[1.1:16]","start":1700451400210,"end":1700451401359,"title":"src\/test\/java\/bdd\/auth\/users[1.1:16] 22:36:40.210-22:36:41.359 Registrar usuario masivamente lucas"},{"id":2,"group":1,"content":"src\/test\/java\/bdd\/auth\/users[1.2:16]","start":1700451401366,"end":1700451401660,"title":"src\/test\/java\/bdd\/auth\/users[1.2:16] 22:36:41.366-22:36:41.660 Registrar usuario masivamente marco"},{"id":3,"group":1,"content":"src\/test\/java\/bdd\/auth\/users[1.3:16]","start":1700451401667,"end":1700451401954,"title":"src\/test\/java\/bdd\/auth\/users[1.3:16] 22:36:41.667-22:36:41.954 Registrar usuario masivamente mario"},{"id":4,"group":1,"content":"src\/test\/java\/bdd\/auth\/users[1.4:16]","start":1700451401959,"end":1700451402249,"title":"src\/test\/java\/bdd\/auth\/users[1.4:16] 22:36:41.959-22:36:42.249 Registrar usuario masivamente liz"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

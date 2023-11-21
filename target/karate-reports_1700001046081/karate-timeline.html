@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.1:18]","start":1700000854036,"end":1700000855060,"title":"src\/test\/java\/examples\/features\/Petstore[1.1:18] 17:27:34.036-17:27:35.060 Creación de pet masivamente - 111 - Boby"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.2:18]","start":1700000855069,"end":1700000855371,"title":"src\/test\/java\/examples\/features\/Petstore[1.2:18] 17:27:35.069-17:27:35.371 Creación de pet masivamente - 222 - Lukas"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.3:18]","start":1700000855375,"end":1700000855687,"title":"src\/test\/java\/examples\/features\/Petstore[1.3:18] 17:27:35.375-17:27:35.687 Creación de pet masivamente - 333 - Memo"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.4:18]","start":1700000855693,"end":1700000855995,"title":"src\/test\/java\/examples\/features\/Petstore[1.4:18] 17:27:35.693-17:27:35.995 Creación de pet masivamente - 444 - Loro"},{"id":5,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.5:18]","start":1700000856001,"end":1700000856299,"title":"src\/test\/java\/examples\/features\/Petstore[1.5:18] 17:27:36.001-17:27:36.299 Creación de pet masivamente - 555 - Araña"},{"id":6,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.6:18]","start":1700000856305,"end":1700000856598,"title":"src\/test\/java\/examples\/features\/Petstore[1.6:18] 17:27:36.305-17:27:36.598 Creación de pet masivamente - 666 - Kira"},{"id":7,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.7:18]","start":1700000856603,"end":1700000856897,"title":"src\/test\/java\/examples\/features\/Petstore[1.7:18] 17:27:36.603-17:27:36.897 Creación de pet masivamente - 777 - Pantera"},{"id":8,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.8:18]","start":1700000856901,"end":1700000857207,"title":"src\/test\/java\/examples\/features\/Petstore[1.8:18] 17:27:36.901-17:27:37.207 Creación de pet masivamente - 888 - Loki"},{"id":9,"group":1,"content":"src\/test\/java\/examples\/features\/Petstore[1.9:18]","start":1700000857211,"end":1700000857502,"title":"src\/test\/java\/examples\/features\/Petstore[1.9:18] 17:27:37.211-17:27:37.502 Creación de pet masivamente - 999 - Pepe"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
